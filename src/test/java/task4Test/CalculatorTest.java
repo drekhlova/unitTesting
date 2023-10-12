@@ -126,8 +126,7 @@ public class CalculatorTest {
         double amount = -100.0;
         double discountPercent = 20.0;
         assertThatThrownBy(() -> calculator.calculateDiscount(amount, discountPercent))
-                .isInstanceOf(ArithmeticException.class)
-                .hasMessage("Invalid input");
+                .isInstanceOf(ArithmeticException.class).hasMessage("Invalid input");
     }
 
     @Test
@@ -136,8 +135,7 @@ public class CalculatorTest {
         double amount = 100.0;
         double discountPercent = -20.0;
         assertThatThrownBy(() -> calculator.calculateDiscount(amount, discountPercent))
-                .isInstanceOf(ArithmeticException.class)
-                .hasMessage("Invalid input");
+                .isInstanceOf(ArithmeticException.class).hasMessage("Invalid input");
     }
 
     @Test
@@ -146,8 +144,7 @@ public class CalculatorTest {
         double amount = 100.0;
         double discountPercent = 120.0;
         assertThatThrownBy(() -> calculator.calculateDiscount(amount, discountPercent))
-                .isInstanceOf(ArithmeticException.class)
-                .hasMessage("Invalid input");
+                .isInstanceOf(ArithmeticException.class).hasMessage("Invalid input");
     }
 
 }
