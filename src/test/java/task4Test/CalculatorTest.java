@@ -91,4 +91,63 @@ public class CalculatorTest {
     void testAssertWithLambdaMessage() {
         assertEquals(4, calculator.add(2, 2), () -> "2 + 2 должно быть равно 4");
     }
+
+    //Тесты для проверки метода calculateDiscount по ДЗ-1 к Семинару №1
+    @Test
+    @DisplayName("Проверка метода calculateDiscount на корректность расчета скидки в процентах")
+    void testCalculateDiscount() {
+        double amount = 100.0;
+        double discountPercent = 20.0;
+        double expected = 80.0;
+        assertThat(calculator.calculateDiscount(amount, discountPercent)).isEqualTo(expected);
+    }
+
+    @Test
+    @DisplayName("Проверка метода calculateDiscount на корректность расчета без скидки (скидка равна 0%)")
+    void testCalculateDiscountWithZeroDiscount() {
+        double amount = 100.0;
+        double discountPercent = 0.0;
+        double expected = 100.0;
+        assertThat(calculator.calculateDiscount(amount, discountPercent)).isEqualTo(expected);
+    }
+
+    @Test
+    @DisplayName("Проверка метода calculateDiscount на корректность расчета максимальной скидки (скидка равна 100%)")
+    void testCalculateDiscountWithMaximumDiscount() {
+        double amount = 100.0;
+        double discountPercent = 100.0;
+        double expected = 0.0;
+        assertThat(calculator.calculateDiscount(amount, discountPercent)).isEqualTo(expected);
+    }
+
+    @Test
+    @DisplayName("Проверка метода calculateDiscount на обработку некорректного ввода (отрицательная сумма покупки)")
+    void testCalculateDiscountWithNegativeAmount() {
+        double amount = -100.0;
+        double discountPercent = 20.0;
+        assertThatThrownBy(() -> calculator.calculateDiscount(amount, discountPercent))
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessage("Invalid input");
+    }
+
+    @Test
+    @DisplayName("Проверка метода calculateDiscount на обработку некорректного ввода (отрицательный процент скидки)")
+    void testCalculateDiscountWithNegativeDiscount() {
+        double amount = 100.0;
+        double discountPercent = -20.0;
+        assertThatThrownBy(() -> calculator.calculateDiscount(amount, discountPercent))
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessage("Invalid input");
+    }
+
+    @Test
+    @DisplayName("Проверка метода calculateDiscount на обработку некорректного ввода (процент скидки больше 100%)")
+    void testCalculateDiscountWithDiscountGreaterThan100() {
+        double amount = 100.0;
+        double discountPercent = 120.0;
+        assertThatThrownBy(() -> calculator.calculateDiscount(amount, discountPercent))
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessage("Invalid input");
+    }
+
 }
