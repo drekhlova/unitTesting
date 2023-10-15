@@ -56,8 +56,7 @@ public class VehicleTest {
         assertEquals(75, motorcycle.getSpeed());
     }
 
-    /* Проверка, что в режиме парковки
-    (сначала testDrive, потом park, т.е. эмуляция движения транспорта)
+    /* Проверка, что в режиме парковки (сначала testDrive, потом park, т.е. эмуляция движения транспорта)
     машина останавливается (speed = 0) */
     @Test
     @DisplayName("В режиме парковки машина останавливается (speed = 0)")
@@ -67,8 +66,7 @@ public class VehicleTest {
         assertEquals(0, car.getSpeed());
     }
 
-    /* Проверка, что в режиме парковки
-    (сначала testDrive, потом park, т.е. эмуляция движения транспорта)
+    /* Проверка, что в режиме парковки (сначала testDrive, потом park, т.е. эмуляция движения транспорта)
     мотоцикл останавливается (speed = 0) */
     @Test
     @DisplayName("В режиме парковки мотоцикл останавливается (speed = 0)")
@@ -77,4 +75,17 @@ public class VehicleTest {
         motorcycle.park();
         assertEquals(0, motorcycle.getSpeed());
     }
+
+    /**
+     * Тест на исключение negativeYearThrowsIllegalArgumentException
+     * Проверка, что при передаче отрицательного года в конструктор Car и в конструктор Motorcycle
+       выбрасывается исключение IllegalArgumentException
+     */
+    @Test
+    @DisplayName("IllegalArgumentException выбрасывается при передаче отрицательного года")
+    public void negativeYearThrowsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> new Car("Lada", "Vesta", -2023));
+        assertThrows(IllegalArgumentException.class, () -> new Motorcycle("Ducati", "Streetfighter V4 S", -2023));
+    }
 }
+
