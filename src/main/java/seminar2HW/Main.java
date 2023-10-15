@@ -1,7 +1,8 @@
 package seminar2HW;
 
 public class Main {
-
+    public static void main(String[] args) {
+        System.out.printf("Hello and welcome!");
     /*
      Домашнее задание к семинару №2 JUnit:
      1. Настроить новый проект:
@@ -21,4 +22,5 @@ public class Main {
              - проверить, что в режиме парковки (сначала testDrive, потом park, т.е эмуляция движения транспорта) машина останавливается (speed = 0)
              - проверить, что в режиме парковки (сначала testDrive, потом park  т.е эмуляция движения транспорта) мотоцикл останавливается (speed = 0)
     */
+    }
 }
