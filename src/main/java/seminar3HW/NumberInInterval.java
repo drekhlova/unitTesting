@@ -1,7 +1,7 @@
 package seminar3HW;
 
-public class numberInInterval {
+public class NumberInInterval {
     public boolean numberInInterval(int n) {
-        return n >= 25 && n <= 100;
+        return (n >= 25 && n <= 100);
     }
 }

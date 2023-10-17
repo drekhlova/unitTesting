@@ -1,6 +1,6 @@
 package seminar3HW;
 
-public class evenOddNumber {
+public class EvenOddNumber {
 
     public boolean evenOddNumber(int n) {
         if (n % 2 == 0) {

@@ -1,20 +1,19 @@
-package seminar3HWTest;
+package seminar3HW;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-public class evenOddNumberTest {
+
+public class EvenOddNumberTest extends EvenOddNumber {
     @Test
     @DisplayName("Проверка четного числа")
     public void testEvenNumber() {
-        evenOddNumber eon = new EvenOddNumber();
-        assertTrue(eon.evenOddNumber(4));
+        Assertions.assertTrue(evenOddNumber(2));
     }
 
     @Test
     @DisplayName("Проверка нечетного числа")
     public void testOddNumber() {
-        evenOddNumber eon = new EvenOddNumber();
-        assertFalse(eon.evenOddNumber(7));
+        Assertions.assertFalse(evenOddNumber(3));
     }
 }
