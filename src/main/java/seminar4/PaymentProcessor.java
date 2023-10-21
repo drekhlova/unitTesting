@@ -1,4 +1,4 @@
-package seminar4.task1;
+package seminar4;
 
 public class PaymentProcessor {
     private PaymentGateway gateway;

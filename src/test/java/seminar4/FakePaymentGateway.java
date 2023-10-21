@@ -1,6 +1,6 @@
-package seminar4.task1;
+package seminar4;
 
-import seminar4.task1.PaymentGateway;
+import seminar4.PaymentGateway;
 
 import java.util.ArrayList;
 import java.util.List;
