@@ -1,6 +1,6 @@
-package seminar4.task1;
+package seminar4;
 
-import seminar4.task1.PaymentGateway;
+import seminar4.PaymentGateway;
 
 public class SpyPaymentGateway implements PaymentGateway {
     private int processPaymentCallCount = 0;

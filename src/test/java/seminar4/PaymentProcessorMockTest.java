@@ -1,9 +1,9 @@
-package seminar4.task1;
+package seminar4;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import seminar4.task1.PaymentGateway;
-import seminar4.task1.PaymentProcessor;
+import seminar4.PaymentGateway;
+import seminar4.PaymentProcessor;
 
 import static org.mockito.Mockito.*;
 
