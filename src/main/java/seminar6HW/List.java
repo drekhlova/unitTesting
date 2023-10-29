@@ -2,19 +2,20 @@ package seminar6HW;
 
 import java.util.ArrayList;
 
+/* Класс List содержит список чисел и метод для вычисления среднего значения */
 public class List {
-    private ArrayList<Integer> numbers;
+    private final ArrayList<Integer> numbers;
 
     public List(ArrayList<Integer> numbers) {
         this.numbers = numbers;
     }
 
     public double getAverage() {
-        int sum = 0;
+        double sum = 0;
         for (int number : numbers) {
             sum += number;
         }
-        return (double) sum / numbers.size();
+        return sum / numbers.size();
     }
 }
 

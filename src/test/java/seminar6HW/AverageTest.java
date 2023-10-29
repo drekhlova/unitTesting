@@ -9,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AverageTest {
 
-    /* В этом случае список numbers1 содержит меньшие числа, чем numbers2, поэтому среднее значение
-    list1 должно быть меньше, чем у list2. */
+    /* В этом случае список numbers1 содержит большие числа, чем numbers2, поэтому среднее значение
+    list1 должно быть больше, чем у list2. */
     @Test
     @DisplayName("Первый список имеет большее среднее значение")
     public void testCompareAverages_firstListHasGreaterAverage() {
@@ -27,8 +27,8 @@ public class AverageTest {
         assertEquals(expected, actual);
     }
 
-    /* Этот тест проверяет обратный случай - список numbers2 содержит меньшие числа, чем numbers1,
-    поэтому среднее значение list2 должно быть меньше, чем у list1. */
+    /* Список numbers1 содержит меньшие числа, чем numbers2, поэтому среднее значение list1
+    должно быть меньше, чем у list2. */
     @Test
     @DisplayName("Второй список имеет большее среднее значение")
     public void testCompareAverages_secondListHasGreaterAverage() {
@@ -45,7 +45,7 @@ public class AverageTest {
         assertEquals(expected, actual);
     }
 
-    /* В этом тесте оба списка содержат одинаковые числа, поэтому средние значения list1 и list2
+    /* Оба списка содержат одинаковые числа, поэтому средние значения list1 и list2
     должны быть равны */
     @Test
     @DisplayName("Средние значения равны")
